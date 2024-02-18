@@ -1,6 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
-
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -53,7 +53,7 @@ const skillColor = "navy";
         <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
         {finished && <p>I finished this tutorial!</p>}
         {goal === 2 ? <p>My goal is to finish in 2 hours.</p> : <p>My goal is not 3 days.</p>}
-
+  
 </body>
     <p>Here are a few facts about me:</p>
     <ul>
@@ -68,3 +68,5 @@ const skillColor = "navy";
       {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 </html>
+
+<Footer />
