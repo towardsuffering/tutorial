@@ -1,19 +1,39 @@
 ---
+import Navigation from '../components/Navigation.astro';
+
+import '../styles/global.css';
+
+const pageTitle = "Home Slice";
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 2;
+
+const skillColor = "navy";
 
 ---
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+
+<Navigation />
 
 <html lang="en">
+	<title>{pageTitle}</title>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<h1>Chris Blogs</h1>
+		<h1>{pageTitle}</h1>
 	</body>
 </html>
