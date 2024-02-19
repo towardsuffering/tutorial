@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+const title = "About Me";
+const description = "Learn more about Chris Rotunno";
+const pubDate = new Date('2024-01-25');
+const heroImage = "/books_cover.png";
+---
+
+<Layout 
+    title={title} 
+    description={description} 
+    pubDate={pubDate} 
+    heroImage={heroImage}>
+
+    <div class="content-wrapper">
+        <div class="image-grid">
+            <img src="/sandythedog.png" alt="Sandy the Dog" class="rotating-image">
+            <img src="/honeythecat.png" alt="Honey the Cat" class="rotating-image">
+    </div>
+
+    <p>Hello, my name is Chris. Originally from Fort Collins, CO, i'm now living in Nashville, TN, after a sunny stint in Saint Petersburg, FL. My life's been thrilling, from skiing and BMX racing in my youth to diving deep into academia and technology as an adult.</p>
+        
+    <p>I hold a BS in Operations and Information Management and an MS in Business Analytics from CU Boulder, and I'm nearing the completion of my MBA in Music Business at MTSU. My 12-year career spans retail to corporate, where I've honed my skills in Python, JS, SQL, and more.</p>
+
+    <p>Outside of my career, my world revolves around my love for arts and sciences, reading, creating content, the joy of caring for my cat and dog, and the quest for love and companionship. I'm actively shaping a future filled with family warmth, financial stability, and the thrill of travel while savoring the journey itself.</p>
+
+    <h4>🌠 Welcome to the World of a Visionary Weaver!</h4>
+
+    <div class="container">
+        <!-- Empathetic Leadership Card -->
+        <div class="card">
+            <i class="icon fas fa-heart"></i>
+            <div class="title">Empathetic Leadership</div>
+            <div class="details">
+                <p>At the core of my being resonates a deep-seated <span class="emphasis">empathy</span>, mirrored in my love for words like "Love" and "Compassion." My approach to leadership is heart-centered, aiming to uplift and inspire everyone who crosses my path.</p>
+            </div>
+        </div>
+
+        <!-- Strategic Mindset Card -->
+        <div class="card">
+            <i class="icon fas fa-chess"></i>
+            <div class="title">Strategic Mindset</div>
+            <div class="details">
+                <p>Equipped with "Logic," "Analysis," and "SWOT," I navigate through life's complexities with clarity and foresight. My <span class="emphasis">strategies</span> are carefully crafted puzzles, designed to bring order and understanding to the chaos of the world.</p>
+            </div>
+        </div>
+
+        <!-- Creative Innovator Card -->
+        <div class="card">
+            <i class="icon fas fa-lightbulb"></i>
+            <div class="title">Creative Innovator</div>
+            <div class="details">
+                <p>My passion lies in innovation and <span class="emphasis">creativity</span>. Words like "Initiate," "Craft," and "Synergy" are the tools I use to mold the future. I believe in the power of turning imaginative ideas into tangible realities.</p>
+            </div>
+        </div>
+
+        <!-- Tech Enthusiast and Knowledge Seeker Card -->
+        <div class="card">
+            <i class="icon fas fa-laptop-code"></i>
+            <div class="title">Tech Enthusiast and Knowledge Seeker</div>
+            <div class="details">
+                <p>I am at my most enthusiastic about <span class="emphasis">tech</span>. "Database," "Node," and "Program" are more than just terms to me; they represent a world of endless learning, exploration, and creativity.</p>
+            </div>
+        </div>
+
+        <!-- Nature and Balance Advocate Card -->
+        <div class="card">
+            <i class="icon fas fa-tree"></i>
+            <div class="title">Nature and Balance Advocate</div>
+            <div class="details">
+                <p>My connection with nature and the importance of <span class="emphasis">balance</span> in life is reflected in words like "Tree," "Root," and "Elastic." I understand that growth is a journey, one that requires resilience, adaptability, and most importantly, intuition.</p>
+            </div>
+        </div>
+
+        <!-- Harmonizer of Diverse Elements Card -->
+        <div class="card">
+            <i class="icon fas fa-balance-scale"></i>
+            <div class="title">Harmonizer of Diverse Elements</div>
+            <div class="details">
+                <p>I find <span class="emphasis">harmony</span> in the balance of opposites. "Variance" and "Constant," "Stateful" and "Stateless," "Risk" and "Gratitude" coexist within my worldview, symbolizing the beautiful symphony of stability and transformation.</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/menu.js"></script>
+
+</Layout>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        position: relative;
+        overflow: visible;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 15px;
+        flex-basis: 20%;
+        z-index: 1; /* Ensures base layer */
+    }
+
+    .card:hover {
+        z-index: 3; /* Raises hovered card above others */
+    }
+
+    .card .icon {
+        font-size: 48px;
+        color: #007BFF;
+        margin-bottom: 10px;
+    }
+
+    .card .title {
+        font-size: 18px;
+        color: #333;
+        margin: 5px 0;
+    }
+
+    .card .details {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: rgba(0, 123, 255, 0.9); /* Blue with 60% opacity */
+        color: white;
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+        width: calc(100% + 60px); /* Making it wider */
+        max-width: 600px; /* Maximum width */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for detail box */
+        text-align: left; /* Text alignment *//* Shadow for the detail box */
+    }
+
+    .card:hover .details {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+	.details .emphasis {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em; /* Increase font size; adjust as needed */
+    font-style: italic; /* Make text italic */
+	background-color: black; /* Highlight color */
+}
+
+    .details p {
+        color: white; /* Text color */
+    }
+
+    .details .highlight {
+        background-color: #f5deb3; /* Highlight color */
+        color: black; /* Text color for highlighted text */
+        padding: 0 5px; /* Padding for highlight effect */
+        border-radius: 3px; /* Optional: rounded corners for highlight */
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            flex-basis: 100%; /* Full width for smaller screens */
+        }
+    }
+
+    .card .details {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: #007BFF; /* Background color for details */
+        color: white;
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+        width: calc(100% + 60px); /* Making it wider */
+        max-width: 600px; /* Maximum width */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for detail box */
+        text-align: left; /* Text alignment *//* Align text to the left */        }
+}
+    .content-wrapper {
+        max-width: 800px; /* Set to match your text width */
+        margin: auto; /* Center the wrapper */
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        gap: 20px; /* Space between images */
+        margin-bottom: 20px; /* Space below the image grid */
+        width: 100%; /* Make images scale to fit their grid column */
+        height: auto; /* Maintain the aspect ratio of the images */
+    }
+
+    .rotating-image {
+        max-width: 70%; /* Adjust this value as needed */
+        height: auto; /* Maintain aspect ratio */
+        animation: rotateImage 20s infinite linear;
+        display: block; /* Ensure the image is a block-level element */
+        margin: auto; /* Center the image in its grid cell */
+}
+    @keyframes rotateImage {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+

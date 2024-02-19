@@ -1,0 +1,155 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+        }
+        main {
+            width: calc(100% - 2em);
+            max-width: 720px;
+            margin: auto;
+            padding: 1em;
+        }
+        .billboard,
+        .video-container,
+        .centered-text,
+        .bag-container,
+        .container {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .billboard {
+			background-color: #900C3F;
+            padding: 16px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+				.marquee-container {
+			padding: 10px;
+			background-color: #FF5733; /* Bright background for the text area */
+			border-radius: 5px; /* Slightly rounded corners within the billboard */
+		}
+		.marquee-text {
+			font-size: 24px;
+			font-weight: bold;
+			color: #FFFFFF; /* Bright text for visibility */
+			font-family: 'Arial', sans-serif; /* Choose a bold, clear font */
+		}
+		.lights-top, .lights-bottom {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 10px;
+			background: repeating-linear-gradient(90deg, #FFFF33, #FFFF33 10px, transparent 10px, transparent 20px); /* Simulating lights */
+		}
+		.lights-top {
+			top: 0;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+		.lights-bottom {
+			bottom: 0;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 0 5px #f5deb3;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 560px;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            display: block;
+        }
+        .highlighted {
+            background-color: #f5deb3;
+            color: black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        button#randomWordButton {
+            padding: 10px 20px;
+            background-color: #f5deb3;
+            color: navy;
+            border: 2px solid #2337ff;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        button#randomWordButton:hover {
+            background-color: #2337ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                width: 100%; /* Full width for mobile */
+                margin: 20px 0; /* Adjust margin */
+            }
+            .billboard {
+                margin: 10px auto; /* Smaller margin */
+                padding: 8px; /* Less padding */
+            }
+            .marquee-text {
+                font-size: 16px; /* Smaller font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <Header title={SITE_TITLE} />
+    <main>
+		<div class="billboard">
+			<div class="lights-top"></div>
+			<div class="marquee-container">
+				<marquee class="marquee-text">🌐 Web. 📊 Analytics. 🎺 Music. 🏬 Markets. </marquee>
+			</div>
+			<div class="lights-bottom"></div>
+		</div>
+		
+				<h2>🧑🏻‍💻 Chris Blogs</h2>
+				<section id="chris-blogs-video">
+					<div class="video-container">
+						<iframe src="https://www.youtube.com/embed/qSSLe0lervg" title="YouTube video player" style="border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+				  </section>
+				<p>My name is Chris Rotunno, and you've landed on "Chris Blogs", my personal platform for <span class="highlighted">development</span>, <span class="highlighted">discovery</span>, and <span class="highlighted">content creation</span>.
+					My interests are multifaceted, ranging from cat humor to entropy. I encourage you to click the button below and browse the rest of my site.</p>
+				<p></p>
+				<div class="container">
+					<div id="wordDisplay" class="word-display"></div> <!-- Word will be displayed here -->
+					<button id="randomWordButton">Chris' Bag Of Words</button>
+				</div>
+				<script type="module" src="/wordPicker.js"></script>
+				</ul>        <!-- Additional content and helpful links -->
+    </main>
+    <Footer />
+    <script type="module" src="/menu.js"></script>
+</body>
+</html>
